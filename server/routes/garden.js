@@ -2,11 +2,11 @@ const express = require('express');
 const router = express.Router();
 const knex = require('../db/knex');
 
-const queries = require('../queries');
+const queries = require('../queries/queries');
 
 router.get("/", (request, response, next) => {
-    queries.list().then(gardens => {
-        response.json({gardens});
+    queries.list().then(garden => {
+        response.json({garden});
     }).catch(next);
 });
 
